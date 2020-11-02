@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <title>Corona Ampel</title>
+</head>
+<body>
+    <div>
+        <input id="inputLkr" placeholder="Landkreis eingeben">
+    </br>
+        <button id="searchLkr" onclick="searchLkr()">Lass die Lichter angehen!</button>
+    </div>
+    <div id="result">
+
+    </div>
+    
+    <div id="traffic-light">
+        <input class="light" type="radio" name="traffic-light-color" id="color1" value="color1" />
+        <input class="light" type="radio" name="traffic-light-color" id="color2" value="color2"/>
+        <input class="light" type="radio" name="traffic-light-color" id="color3" value="color3" />
+    </div>
+    
+</body>
+<script src="js.js"></script>
+</html>

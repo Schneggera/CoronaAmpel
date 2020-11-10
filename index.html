@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <title>Corona Ampel</title>
-</head>
-<body>
+  </head>
+  <body>
+    <a href="https://github.com/Schneggera/CoronaAmpel"
+      ><img
+        loading="lazy"
+        width="149"
+        height="149"
+        src="https://github.blog/wp-content/uploads/2008/12/forkme_left_gray_6d6d6d.png?resize=149%2C149"
+        class="attachment-full size-full"
+        alt="Fork me on GitHub"
+        data-recalc-dims="1"
+    /></a>
+    <div id="inputBox">
+      <input id="inputLkr" placeholder="Landkreis eingeben" />
+      <br />
+      <button id="searchLkr" onclick="searchLkr()">
+        Lass die Lichter angehen!
+      </button>
+    </div>
     <div>
-        <input id="inputLkr" placeholder="Landkreis eingeben">
-    </br>
-        <button id="searchLkr" onclick="searchLkr()">Lass die Lichter angehen!</button>
+      <div id="result"></div>
     </div>
-    <div id="result">
-
-    </div>
-    
+    <p id="currentCity"></p>
     <div id="traffic-light">
-        <input class="light" type="radio" name="traffic-light-color" id="color1" value="color1" disabled/>
-        <input class="light" type="radio" name="traffic-light-color" id="color2" value="color2" disabled/>
-        <input class="light" type="radio" name="traffic-light-color" id="color3" value="color3" disabled/>
+      <input
+        class="light"
+        type="radio"
+        name="traffic-light-color"
+        id="color0"
+        value="color0"
+        disabled
+        style="display: none"
+      />
+      <input
+        class="light"
+        type="radio"
+        name="traffic-light-color"
+        id="color1"
+        value="color1"
+        disabled
+      />
+      <input
+        class="light"
+        type="radio"
+        name="traffic-light-color"
+        id="color2"
+        value="color2"
+        disabled
+      />
+      <input
+        class="light"
+        type="radio"
+        name="traffic-light-color"
+        id="color3"
+        value="color3"
+        disabled
+      />
     </div>
-    
-</body>
-<script src="js.js"></script>
+  </body>
+  <script src="js.js"></script>
 </html>

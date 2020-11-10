@@ -5,11 +5,11 @@
 @color1: #FF0000;//red
 @color2: #FFFF00;//yellow
 @color3: #00FF00;//green
+@color0: #bd0000;//darkred
+@buttonColor: #cdcdcd;
 
 
-body {
-  background-image: url(https://f.cl.ly/items/2K0P3z2y3X3c052f2B3Y/Image%202013.04.30%2021%3A28%3A02.png);
-}
+
 
 #traffic-light {
   //main traffic light
@@ -24,15 +24,28 @@ body {
   border-radius:30px;
 }
 
+button{
+  border-radius: 5px;
+  color: black;
+  background-color: @buttonColor;
+  border-color: @buttonColor;
+  border-style: solid;
+
+}
+
+#inputBox{
+  margin-top: -60px;
+}
+
 #inputLkr{
   position: relative;
   left: 50%;
   width:250px;
   height:25px;
-  margin-top: 20px;
   margin-left:-125px;
   border-radius: 5px;
   border-width: thin;
+  margin-top: -50px;
 }
 
 #searchLkr{
@@ -42,18 +55,27 @@ body {
   height:25px;
   margin-top: 5px;
   margin-left:-100px;
-  border-radius: 5px;
 }
 
 ul {
   padding: 0;
-  font-family: Arial;
-  font-size: 1em;
   position: relative;
+  width: 100%;
+  margin-right: 400px;
 }
 
 #result{
   position: relative;
+  width: 400px;
+  margin-left: -130px;
+  left: 50%;
+}
+
+#currentCity{
+  position: relative;
+  width: 200px;
+  margin-left: -100px;
+  left: 50%;
 }
 
 .light {
@@ -68,9 +90,16 @@ ul {
   margin-top: 20px;
   margin-left:-40px;
   background-color: grey;
-  vertical-align: middle;
+  //vertical-align: middle;
   border-radius: 100%;
   display: block;
+  &#color0 {
+    background-color: darken(@color0,15%);
+    &:checked {
+      background-color: @color0;
+      box-shadow: 0 0 6em lighten(@color0,10%);
+    }
+  }
   &#color1 {
     background-color: darken(@color1,15%);
     &:checked {
@@ -94,8 +123,9 @@ ul {
   }
 }
 
-//extra stuff
 * {
   user-select: none;
   outline:none;
+  font-family: Arial;
+  font-size: 1em;
 }

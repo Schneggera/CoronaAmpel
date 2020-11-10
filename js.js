@@ -1,4 +1,4 @@
-'use strict';
+
 
 function searchLkr(){
     let lkr = document.getElementById('inputLkr').value;

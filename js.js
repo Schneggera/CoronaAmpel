@@ -1,8 +1,15 @@
 'use strict';
 
+window.onload = function () {
+    if(localStorage.getItem('lkr')){
+        document.getElementById('inputLkr').value = localStorage.getItem('lkr');
+    }
+}
+
 function searchLkr(){
     let lkr = document.getElementById('inputLkr').value;
     let result = ``
+    localStorage.setItem('lkr', lkr);
     fetch(`https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?`+
                                 `where=GEN%20%3D%20'${lkr}'&outFields=GEN,death_rate,cases,deaths,cases_per_100k,`+
                                 `cases_per_population,cases7_per_100k,cases7_bl_per_100k,recovered,BL,bez&outSR=4326&f=json`)
@@ -18,7 +25,7 @@ function searchLkr(){
             result +=`
             <ul style="list-style-type:none;">
                 <li><b>${element['attributes']['BEZ']} ${element['attributes']['GEN']}</b></li>
-                <li><b>Fälle:</b> ${element['attributes']['cases']}</li>
+                <li><b>Fälle (aktiv/genesen):</b> ${element['attributes']['cases']}</li>
                 <li><b>Fälle/100.000 EW:</b> ${Number(element['attributes']['cases_per_100k']).toFixed(2)}</li>
                 <li><b>Fälle 7 Tage/100.000 EW:</b> ${Number(element['attributes']['cases7_per_100k']).toFixed(2)}</li>
                 <li><b>Anzahl Todesfälle:</b> ${element['attributes']['deaths']}</li>
